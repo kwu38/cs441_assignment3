@@ -19,8 +19,9 @@
 }
 
 - (void)didMoveToView:(SKView *)view {
-
-    
+    ball = [SKSpriteNode spriteNodeWithImageNamed:@"ball"];
+    [self addChild:ball];
+    ball.physicsBody.applyForce(CGVector(dx: -20, dy:-20));
 }
 
 
