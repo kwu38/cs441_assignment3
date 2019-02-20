@@ -15,13 +15,21 @@
     SKSpriteNode* ball;
     SKSpriteNode* playerPaddle;
     SKSpriteNode* computerPaddle;
+    SKPhysicsBody* border;
     
 }
 
 - (void)didMoveToView:(SKView *)view {
     ball = [SKSpriteNode spriteNodeWithImageNamed:@"ball"];
-    [self addChild:ball];
-    ball.physicsBody.applyForce(CGVector(dx: -20, dy:-20));
+    ball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:25];
+    ball.physicsBody.affectedByGravity = true;;
+   [self addChild:ball];
+    CGVector impulse = CGVectorMake(-20,-20);
+    [ball.physicsBody applyImpulse: impulse];
+    border = [SKPhysicsBody bodyWithEdgeLoopFromRect: self.frame];
+    border.friction = 0;
+    border.restitution = 1;
+    self.physicsBody = border;
 }
 
 
