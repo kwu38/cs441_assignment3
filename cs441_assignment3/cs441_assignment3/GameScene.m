@@ -16,19 +16,30 @@
     SKSpriteNode* playerPaddle;
     SKSpriteNode* computerPaddle;
     SKPhysicsBody* border;
-    
+    SKSpriteNode* background;
 }
 
 - (void)didMoveToView:(SKView *)view {
+    background = [SKSpriteNode spriteNodeWithImageNamed:@"football"];
+    background.zPosition = 1;
+    background.size = self.frame.size;
+    //background.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
+    [self addChild:background];
     ball = [SKSpriteNode spriteNodeWithImageNamed:@"ball"];
-    ball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:25];
-    ball.physicsBody.affectedByGravity = true;;
-   [self addChild:ball];
-    CGVector impulse = CGVectorMake(-20,-20);
+    ball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
+    ball.physicsBody.friction = 0;
+    ball.physicsBody.restitution = 1;
+    ball.physicsBody.linearDamping = 0;
+    ball.physicsBody.angularDamping = 0;
+    ball.physicsBody.affectedByGravity = false;
+    [self addChild:ball];
+    CGVector impulse = CGVectorMake(10, 10);
     [ball.physicsBody applyImpulse: impulse];
     border = [SKPhysicsBody bodyWithEdgeLoopFromRect: self.frame];
     border.friction = 0;
     border.restitution = 1;
+    border.linearDamping = 0;
+    border.angularDamping = 0;
     self.physicsBody = border;
 }
 

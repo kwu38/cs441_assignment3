@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230ADA86222075B1007C84F2 /* football.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 230ADA85222075B0007C84F2 /* football.jpg */; };
 		232409A6221DA4540030E7F7 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 232409A5221DA4540030E7F7 /* ball.png */; };
 		23E1FAB1221A0BB100DF5B2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E1FAB0221A0BB100DF5B2F /* AppDelegate.m */; };
 		23E1FAB3221A0BB100DF5B2F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 23E1FAB2221A0BB100DF5B2F /* GameScene.sks */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		230ADA85222075B0007C84F2 /* football.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = football.jpg; path = ../../../../Downloads/football.jpg; sourceTree = "<group>"; };
 		232409A5221DA4540030E7F7 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ball.png; path = ../../../../Downloads/ball.png; sourceTree = "<group>"; };
 		23E1FAAC221A0BB100DF5B2F /* cs441_assignment3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cs441_assignment3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23E1FAAF221A0BB100DF5B2F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				232409A5221DA4540030E7F7 /* ball.png */,
+				230ADA85222075B0007C84F2 /* football.jpg */,
 				23E1FAAF221A0BB100DF5B2F /* AppDelegate.h */,
 				23E1FAB0221A0BB100DF5B2F /* AppDelegate.m */,
 				23E1FAB2221A0BB100DF5B2F /* GameScene.sks */,
@@ -146,6 +149,7 @@
 				23E1FAB3221A0BB100DF5B2F /* GameScene.sks in Resources */,
 				232409A6221DA4540030E7F7 /* ball.png in Resources */,
 				23E1FAC0221A0BB800DF5B2F /* Assets.xcassets in Resources */,
+				230ADA86222075B1007C84F2 /* football.jpg in Resources */,
 				23E1FAC3221A0BB800DF5B2F /* LaunchScreen.storyboard in Resources */,
 				23E1FAB5221A0BB100DF5B2F /* Actions.sks in Resources */,
 			);
