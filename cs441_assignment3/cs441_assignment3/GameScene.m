@@ -32,6 +32,8 @@
     ball.physicsBody.linearDamping = 0;
     ball.physicsBody.angularDamping = 0;
     ball.physicsBody.affectedByGravity = false;
+    ball.name = @"theduke";
+    ball.userInteractionEnabled = true;
     [self addChild:ball];
     CGVector impulse = CGVectorMake(10, 10);
     [ball.physicsBody applyImpulse: impulse];
@@ -66,10 +68,12 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    // Run 'Pulse' action from 'Actions.sks'
-    [_label runAction:[SKAction actionNamed:@"Pulse"] withKey:@"fadeInOut"];
-    
-    for (UITouch *t in touches) {[self touchDownAtPoint:[t locationInNode:self]];}
+    UITouch* touch = [touches anyObject];
+    CGPoint positionInScene = [touch locationInNode: self];
+    SKSpriteNode* touchedNode = [self nodeAtPoint:positionInScene];
+    if(touchedNode && [touchedNode.name isEqualToString:@"theduke"]){
+        NSLOG("Touched");
+    }
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     for (UITouch *t in touches) {[self touchMovedToPoint:[t locationInNode:self]];}
