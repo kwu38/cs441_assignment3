@@ -17,12 +17,13 @@
     SKSpriteNode* computerPaddle;
     SKPhysicsBody* border;
     SKSpriteNode* background;
+    
 }
 
 - (void)didMoveToView:(SKView *)view {
-    background = [SKSpriteNode spriteNodeWithImageNamed:@"football"];
-    background.zPosition = 1;
+    background = [SKSpriteNode spriteNodeWithImageNamed:@"court.jpg"];
     background.size = self.frame.size;
+    background.zPosition = -1;
     //background.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
     [self addChild:background];
     ball = [SKSpriteNode spriteNodeWithImageNamed:@"ball"];
@@ -33,10 +34,8 @@
     ball.physicsBody.angularDamping = 0;
     ball.physicsBody.affectedByGravity = false;
     ball.name = @"theduke";
-    ball.userInteractionEnabled = true;
+    ball.userInteractionEnabled = false;
     [self addChild:ball];
-    CGVector impulse = CGVectorMake(10, 10);
-    [ball.physicsBody applyImpulse: impulse];
     border = [SKPhysicsBody bodyWithEdgeLoopFromRect: self.frame];
     border.friction = 0;
     border.restitution = 1;
@@ -47,42 +46,34 @@
 
 
 - (void)touchDownAtPoint:(CGPoint)pos {
-    SKShapeNode *n = [_spinnyNode copy];
-    n.position = pos;
-    n.strokeColor = [SKColor greenColor];
-    [self addChild:n];
+    
 }
 
 - (void)touchMovedToPoint:(CGPoint)pos {
-    SKShapeNode *n = [_spinnyNode copy];
-    n.position = pos;
-    n.strokeColor = [SKColor blueColor];
-    [self addChild:n];
+    
 }
 
 - (void)touchUpAtPoint:(CGPoint)pos {
-    SKShapeNode *n = [_spinnyNode copy];
-    n.position = pos;
-    n.strokeColor = [SKColor redColor];
-    [self addChild:n];
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch* touch = [touches anyObject];
     CGPoint positionInScene = [touch locationInNode: self];
-    SKSpriteNode* touchedNode = [self nodeAtPoint:positionInScene];
-    if(touchedNode && [touchedNode.name isEqualToString:@"theduke"]){
-        NSLOG("Touched");
+    SKNode* touchedNode = [self nodeAtPoint:positionInScene];
+    if([touchedNode.name isEqualToString:@"theduke"]){
+        CGVector impulse = CGVectorMake(10, 10);
+        [touchedNode.physicsBody applyImpulse: impulse];
     }
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    for (UITouch *t in touches) {[self touchMovedToPoint:[t locationInNode:self]];}
+    
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    for (UITouch *t in touches) {[self touchUpAtPoint:[t locationInNode:self]];}
+    
 }
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    for (UITouch *t in touches) {[self touchUpAtPoint:[t locationInNode:self]];}
+
 }
 
 
