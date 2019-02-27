@@ -13,21 +13,23 @@
     SKLabelNode *_label;
     
     SKSpriteNode* ball;
-    SKSpriteNode* playerPaddle;
-    SKSpriteNode* computerPaddle;
+    SKNode* playerPaddle;
     SKPhysicsBody* border;
     SKSpriteNode* background;
+    Boolean paddleTouched;
     
 }
 
 - (void)didMoveToView:(SKView *)view {
+    paddleTouched = false;
     background = [SKSpriteNode spriteNodeWithImageNamed:@"court.jpg"];
     background.size = self.frame.size;
     background.zPosition = -1;
     //background.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
     [self addChild:background];
+    playerPaddle = [self childNodeWithName:(@"paddle")];
     ball = [SKSpriteNode spriteNodeWithImageNamed:@"ball"];
-    ball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
+    ball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:5];
     ball.physicsBody.friction = 0;
     ball.physicsBody.restitution = 1;
     ball.physicsBody.linearDamping = 0;
@@ -62,14 +64,26 @@
     CGPoint positionInScene = [touch locationInNode: self];
     SKNode* touchedNode = [self nodeAtPoint:positionInScene];
     if([touchedNode.name isEqualToString:@"theduke"]){
-        CGVector impulse = CGVectorMake(10, 10);
+        CGVector impulse = CGVectorMake(5, 5);
         [touchedNode.physicsBody applyImpulse: impulse];
     }
+    if([touchedNode.name isEqualToString:@"paddle"]){
+        paddleTouched = true;
+    }
+    
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    if(paddleTouched){
+        UITouch* touch = [touches anyObject];
+        CGPoint positionInScene = [touch locationInNode: self];
+        playerPaddle.position = positionInScene;
+    }
     
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    if(paddleTouched){
+        paddleTouched = false;
+    }
     
 }
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
