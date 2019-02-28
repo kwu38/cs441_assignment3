@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		230ADA86222075B1007C84F2 /* football.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 230ADA85222075B0007C84F2 /* football.jpg */; };
-		232409A6221DA4540030E7F7 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 232409A5221DA4540030E7F7 /* ball.png */; };
-		23DA3A732225F62800AC9BE1 /* court.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 23DA3A722225F62700AC9BE1 /* court.jpg */; };
+		2385F06D22273AD400EBC531 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 2385F06C22273AD300EBC531 /* ball.png */; };
+		2385F06F22273D4B00EBC531 /* court.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2385F06E22273D4B00EBC531 /* court.jpg */; };
 		23E1FAB1221A0BB100DF5B2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E1FAB0221A0BB100DF5B2F /* AppDelegate.m */; };
 		23E1FAB3221A0BB100DF5B2F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 23E1FAB2221A0BB100DF5B2F /* GameScene.sks */; };
 		23E1FAB5221A0BB100DF5B2F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 23E1FAB4221A0BB100DF5B2F /* Actions.sks */; };
@@ -23,8 +23,8 @@
 
 /* Begin PBXFileReference section */
 		230ADA85222075B0007C84F2 /* football.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = football.jpg; path = ../../../../Downloads/football.jpg; sourceTree = "<group>"; };
-		232409A5221DA4540030E7F7 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ball.png; path = ../../../../Downloads/ball.png; sourceTree = "<group>"; };
-		23DA3A722225F62700AC9BE1 /* court.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = court.jpg; path = ../../../../Downloads/court.jpg; sourceTree = "<group>"; };
+		2385F06C22273AD300EBC531 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ball.png; path = ../../../../Downloads/ball.png; sourceTree = "<group>"; };
+		2385F06E22273D4B00EBC531 /* court.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = court.jpg; path = ../../../../Downloads/court.jpg; sourceTree = "<group>"; };
 		23E1FAAC221A0BB100DF5B2F /* cs441_assignment3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cs441_assignment3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23E1FAAF221A0BB100DF5B2F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		23E1FAB0221A0BB100DF5B2F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -71,9 +71,9 @@
 		23E1FAAE221A0BB100DF5B2F /* cs441_assignment3 */ = {
 			isa = PBXGroup;
 			children = (
-				232409A5221DA4540030E7F7 /* ball.png */,
+				2385F06C22273AD300EBC531 /* ball.png */,
+				2385F06E22273D4B00EBC531 /* court.jpg */,
 				230ADA85222075B0007C84F2 /* football.jpg */,
-				23DA3A722225F62700AC9BE1 /* court.jpg */,
 				23E1FAAF221A0BB100DF5B2F /* AppDelegate.h */,
 				23E1FAB0221A0BB100DF5B2F /* AppDelegate.m */,
 				23E1FAB2221A0BB100DF5B2F /* GameScene.sks */,
@@ -150,11 +150,11 @@
 			files = (
 				23E1FABE221A0BB100DF5B2F /* Main.storyboard in Resources */,
 				23E1FAB3221A0BB100DF5B2F /* GameScene.sks in Resources */,
-				232409A6221DA4540030E7F7 /* ball.png in Resources */,
 				23E1FAC0221A0BB800DF5B2F /* Assets.xcassets in Resources */,
 				230ADA86222075B1007C84F2 /* football.jpg in Resources */,
-				23DA3A732225F62800AC9BE1 /* court.jpg in Resources */,
 				23E1FAC3221A0BB800DF5B2F /* LaunchScreen.storyboard in Resources */,
+				2385F06F22273D4B00EBC531 /* court.jpg in Resources */,
+				2385F06D22273AD400EBC531 /* ball.png in Resources */,
 				23E1FAB5221A0BB100DF5B2F /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

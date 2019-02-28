@@ -27,6 +27,23 @@
     
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(playerLost:)
+                                                 name:@"PlayerLostNotification"
+                                               object:nil];   
+}
+- (void)playerLost:(NSNotification*) notification {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Game Over!"
+                                                                   message:@"Do you want to try again?"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Try Again"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction * action) {
+                                                       [alert dismissViewControllerAnimated:YES completion:nil];
+                                                   }];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (BOOL)shouldAutorotate {
